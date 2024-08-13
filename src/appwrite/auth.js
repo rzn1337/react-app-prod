@@ -26,7 +26,7 @@ export class AuthService {
 
     async login ({email, password}) {
         try {
-            const session = await this.account.createEmailSession(email, password)
+            const session = await this.account.createEmailPasswordSession(email, password)
             return session
         } catch (error) {
             throw error
@@ -44,7 +44,8 @@ export class AuthService {
 
     async logout () {
         try {
-            await this.account.deleteSessions()
+            sessionID = await this.account.getSession('current')
+            await this.account.deleteSession(sessionID)
         } catch (error) {
             throw error
         }

@@ -80,7 +80,7 @@ function Signup() {
                 required: true,
               })}
             />
-            <Button type="submit" className="w-full">
+            <Button textColor="text-black" type="submit" className="w-full">
               Create Account
             </Button>
           </div>

@@ -6,11 +6,11 @@ function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    appwriteService.getPosts().then((posts) => {
-      if (posts) {
-        setPosts(posts.documents);
-      }
-    });
+    // appwriteService.getPosts().then((posts) => {
+    //   if (posts) {
+    //     setPosts(posts.documents);
+    //   }
+    // });
   }, []);
 
   if (posts.length === 0) {

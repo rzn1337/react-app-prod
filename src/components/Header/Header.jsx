@@ -3,7 +3,6 @@ import { Container, Logo, LogoutButton } from '../index'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { login } from '../../store/authSlice'
 
 function Header() {
 
@@ -30,7 +29,7 @@ function Header() {
       active: authStatus
     }, {
       name: 'Add Post',
-      slug: '/add-posts',
+      slug: '/add-post',
       active: authStatus
     }
   ]
@@ -44,7 +43,7 @@ function Header() {
                 <Logo width='70px' />
               </Link>
           </div>
-          <ul className='flex ml-auto'>
+          <ul className='flex ml-auto text-white gap-3'>
             {navItems.map((item) => (
               item.active ? (
                 <li key={item.name}>
